@@ -1,1 +1,2 @@
-pnpm test
+npx lint-staged
+pnpm run typecheck
