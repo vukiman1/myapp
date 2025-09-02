@@ -15,12 +15,14 @@
     "*.{json,md,yml,css}": "prettier --write"
   },
   "dependencies": {
-    "@ant-design/icons": "^6.0.0",
+    "@ant-design/icons": "^5.6.1",
     "antd": "^5.27.1",
     "next": "15.5.2",
+    "next-i18next": "^15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-hook-form": "^7.62.0"
+    "react-hook-form": "^7.62.0",
+    "react-i18next": "^15.7.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
