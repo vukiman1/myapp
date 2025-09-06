@@ -1,17 +1,17 @@
 "use client";
 
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Button, Checkbox, Form, Input, Space, Divider, Select } from "antd";
-import Image from "next/image";
+import { Button, Checkbox, Form, Input, Space, Divider } from "antd";
 import {
   FacebookOutlined,
   GithubOutlined,
   GoogleOutlined,
   UserOutlined,
   LockOutlined,
-  GlobalOutlined,
 } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
+import SelectLanguage from "../../lib/selectLanguage";
+import { useQuery } from "@tanstack/react-query";
 
 type Inputs = {
   email: string;
@@ -22,12 +22,13 @@ type Inputs = {
 const SignInForm = () => {
   const { handleSubmit } = useForm<Inputs>();
   const { t } = useTranslation();
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
-  };
-
+  const onSubmit: SubmitHandler<Inputs> = (data) => {};
+  const { data } = useQuery({
+    queryKey: ["test"],
+    queryFn: () => Promise.resolve(5),
+  });
   const handleSocialLogin = (provider: string) => {
-    console.log(`Đăng nhập với ${provider}`);
+    console.log(data);
   };
 
   return (
@@ -35,42 +36,7 @@ const SignInForm = () => {
       {/* Language Selector */}
       <div className="flex justify-end mb-4">
         <div className="flex items-center gap-2 text-sm">
-          <GlobalOutlined className="text-gray-500" />
-          <Select
-            defaultValue="vi"
-            size="small"
-            className="min-w-[120px]"
-            options={[
-              {
-                label: (
-                  <span className="flex items-center gap-2">
-                    <Image
-                      src="/images/icons/flags/en.png"
-                      alt="English"
-                      width={20}
-                      height={20}
-                    />
-                    English
-                  </span>
-                ),
-                value: "en",
-              },
-              {
-                label: (
-                  <span className="flex items-center gap-2">
-                    <Image
-                      src="/images/icons/flags/vi.png"
-                      alt="Vietnamese"
-                      width={20}
-                      height={20}
-                    />
-                    Tiếng Việt
-                  </span>
-                ),
-                value: "vi",
-              },
-            ]}
-          />
+          <SelectLanguage />
         </div>
       </div>
 
@@ -90,7 +56,7 @@ const SignInForm = () => {
           <Input
             size="large"
             type="email"
-            placeholder="Nhập email của bạn"
+            placeholder={t("login.emailPlaceholder")}
             prefix={<UserOutlined className="text-gray-400" />}
             className="rounded-lg border-gray-300 hover:border-blue-400 focus:border-blue-500"
           />
@@ -99,16 +65,16 @@ const SignInForm = () => {
         <Form.Item>
           <Input.Password
             size="large"
-            placeholder="Nhập mật khẩu"
+            placeholder={t("login.passwordPlaceholder")}
             prefix={<LockOutlined className="text-gray-400" />}
             className="rounded-lg border-gray-300 hover:border-blue-400 focus:border-blue-500"
           />
         </Form.Item>
 
         <div className="flex items-center justify-between">
-          <Checkbox className="text-gray-600">Ghi nhớ đăng nhập</Checkbox>
+          <Checkbox className="text-gray-600">{t("login.remember")}</Checkbox>
           <a href="#" className="text-blue-500 hover:text-blue-600 text-sm">
-            Quên mật khẩu?
+            {t("login.forgotPassword")}
           </a>
         </div>
 
@@ -118,10 +84,10 @@ const SignInForm = () => {
           size="large"
           className="w-full bg-gradient-to-r from-blue-500 to-purple-600 border-none hover:from-blue-600 hover:to-purple-700 rounded-lg h-12 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-200"
         >
-          Đăng nhập ngay
+          {t("login.loginButton")}
         </Button>
 
-        <Divider className="text-gray-400">Hoặc đăng nhập với</Divider>
+        <Divider className="text-gray-400">{t("login.orLoginWith")}</Divider>
 
         <Space direction="horizontal" className="w-full">
           <Button
@@ -153,12 +119,12 @@ const SignInForm = () => {
         </Space>
 
         <div className="text-center mt-2">
-          <span className="text-gray-600">Chưa có tài khoản? </span>
+          <span className="text-gray-600">{t("login.noAccount")} </span>
           <a
             href="#"
             className="text-blue-500 hover:text-blue-600 font-semibold"
           >
-            Đăng ký ngay
+            {t("login.signUpNow")}
           </a>
         </div>
       </Form>

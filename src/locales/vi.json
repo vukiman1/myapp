@@ -1,0 +1,17 @@
+{
+  "login": {
+    "welcome": "Chào mừng",
+    "welcome.text": "Vui lòng đăng nhập để tiếp tục",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "remember": "Ghi nhớ đăng nhập",
+    "login": "Đăng nhập",
+    "emailPlaceholder": "Nhập email của bạn",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "loginButton": "Đăng nhập ngay",
+    "orLoginWith": "Hoặc đăng nhập với",
+    "noAccount": "Chưa có tài khoản?",
+    "signUpNow": "Đăng ký ngay"
+  }
+}
