@@ -6,27 +6,30 @@ import {
   GoogleOutlined,
   UserOutlined,
   LockOutlined,
+  MailOutlined,
 } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import SelectLanguage from "../../lib/selectLanguage";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { SelectTheme } from "@/lib/selectTheme";
-import { deleteMany, getMany, setMany } from "@/helper/localstorage";
 import CloudflareTurnstile from "@/lib/cloudflare/cloudflare_turnstile";
 import { useState } from "react";
 import { AuthApi } from "@/lib/api/auth/auth";
+
 type FormValues = {
+  name: string;
   email: string;
   password: string;
-  remember: boolean;
+  confirmPassword: string;
+  agreeTerms: boolean;
   captchaToken: string;
 };
 
-const SignInForm = () => {
+const RegisterForm = () => {
   const { t } = useTranslation();
   const [form] = Form.useForm<FormValues>();
   const [loading, setLoading] = useState(true);
-  const [localEmail] = getMany(["email"]);
+
   const socialLogin = [
     { name: "google", icon: GoogleOutlined },
     { name: "facebook", icon: FacebookOutlined },
@@ -34,13 +37,13 @@ const SignInForm = () => {
   ];
 
   const mutation = useMutation({
-    mutationFn: AuthApi.login,
+    mutationFn: AuthApi.register,
     onSuccess: () => {
-      console.log("Login success");
+      console.log("Register success");
       setLoading(false);
     },
     onError: () => {
-      console.log("Login error");
+      console.log("Register error");
       setLoading(false);
     },
   });
@@ -48,18 +51,11 @@ const SignInForm = () => {
   const onFinish = (values: FormValues) => {
     setLoading(true);
     mutation.mutate({
+      name: values.name,
       email: values.email,
       password: values.password,
       captchaToken: values.captchaToken,
     });
-    if (values.remember) {
-      setMany(
-        ["remember", "email"],
-        [values.remember.toString(), values.email],
-      );
-    } else {
-      deleteMany(["remember", "email"]);
-    }
   };
 
   const handleTurnstileSuccess = (token: string) => {
@@ -81,21 +77,16 @@ const SignInForm = () => {
     console.log("❌ Form validation failed:", errorInfo);
   };
 
-  const { data } = useQuery({
-    queryKey: ["test"],
-    queryFn: () => Promise.resolve(5),
-  });
-
   const handleSocialLogin = (provider: string) => {
-    console.log(`🔗 Social login with ${provider}`, data);
-    // TODO: Implement social login
+    console.log(`🔗 Social register with ${provider}`);
+    // TODO: Implement social register
   };
 
   return (
     <>
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-primary mb-2">
-          {t("login.login").toUpperCase()}
+          {t("register.register").toUpperCase()}
         </h2>
       </div>
       <Form
@@ -104,11 +95,26 @@ const SignInForm = () => {
         onFinishFailed={onFinishFailed}
         layout="vertical"
         className="space-y-4"
-        initialValues={{ remember: false }}
+        initialValues={{ agreeTerms: false }}
       >
         <Form.Item
+          name="name"
+          rules={[
+            { required: true, message: "Vui lòng nhập họ tên!" },
+            { min: 2, message: "Họ tên phải có ít nhất 2 ký tự!" },
+          ]}
+        >
+          <Input
+            size="large"
+            type="text"
+            placeholder={t("register.namePlaceholder")}
+            prefix={<UserOutlined className="text-icon" />}
+            className="rounded-lg form-input"
+          />
+        </Form.Item>
+
+        <Form.Item
           name="email"
-          initialValue={localEmail}
           rules={[
             { required: true, message: "Vui lòng nhập email!" },
             { type: "email", message: "Email không hợp lệ!" },
@@ -117,8 +123,8 @@ const SignInForm = () => {
           <Input
             size="large"
             type="email"
-            placeholder={t("login.emailPlaceholder")}
-            prefix={<UserOutlined className="text-icon" />}
+            placeholder={t("register.emailPlaceholder")}
+            prefix={<MailOutlined className="text-icon" />}
             className="rounded-lg form-input"
           />
         </Form.Item>
@@ -132,22 +138,62 @@ const SignInForm = () => {
         >
           <Input.Password
             size="large"
-            placeholder={t("login.passwordPlaceholder")}
+            placeholder={t("register.passwordPlaceholder")}
             prefix={<LockOutlined className="text-icon" />}
             className="rounded-lg form-input"
           />
         </Form.Item>
 
-        <div className="flex items-center justify-between">
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox className="text-secondary" checked={true}>
-              {t("login.remember")}
-            </Checkbox>
-          </Form.Item>
-          <a href="#" className="text-link text-sm">
-            {t("login.forgotPassword")}
-          </a>
-        </div>
+        <Form.Item
+          name="confirmPassword"
+          dependencies={["password"]}
+          rules={[
+            { required: true, message: "Vui lòng xác nhận mật khẩu!" },
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue("password") === value) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(
+                  new Error("Mật khẩu xác nhận không khớp!"),
+                );
+              },
+            }),
+          ]}
+        >
+          <Input.Password
+            size="large"
+            placeholder={t("register.confirmPasswordPlaceholder")}
+            prefix={<LockOutlined className="text-icon" />}
+            className="rounded-lg form-input"
+          />
+        </Form.Item>
+
+        <Form.Item
+          name="agreeTerms"
+          valuePropName="checked"
+          rules={[
+            {
+              validator: (_, value) =>
+                value
+                  ? Promise.resolve()
+                  : Promise.reject(
+                      new Error("Vui lòng đồng ý với điều khoản!"),
+                    ),
+            },
+          ]}
+        >
+          <Checkbox className="text-secondary">
+            {t("register.agreeTerms")}{" "}
+            <a href="#" className="text-link">
+              {t("register.termsOfService")}
+            </a>{" "}
+            {t("register.and")}{" "}
+            <a href="#" className="text-link">
+              {t("register.privacyPolicy")}
+            </a>
+          </Checkbox>
+        </Form.Item>
 
         <Button
           type="primary"
@@ -156,10 +202,12 @@ const SignInForm = () => {
           size="large"
           className="w-full bg-gradient-to-r from-blue-500 to-purple-600 border-none hover:from-blue-600 hover:to-purple-700 rounded-lg h-12 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-200"
         >
-          {t("login.loginButton")}
+          {t("register.registerButton")}
         </Button>
 
-        <Divider className="divider-theme">{t("login.orLoginWith")}</Divider>
+        <Divider className="divider-theme">
+          {t("register.orRegisterWith")}
+        </Divider>
 
         <Space direction="horizontal" className="w-full">
           {socialLogin.map((social) => (
@@ -185,10 +233,11 @@ const SignInForm = () => {
             className="mx-auto"
           />
         </div>
+
         <div className="text-center">
-          <span className="text-secondary">{t("login.noAccount")}</span>
-          <a href="/register" className="text-link font-semibold">
-            {t("login.signUpNow")}
+          <span className="text-secondary">{t("register.haveAccount")}</span>
+          <a href="/signin" className="text-link font-semibold">
+            {t("register.signInNow")}
           </a>
         </div>
 
@@ -203,4 +252,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default RegisterForm;

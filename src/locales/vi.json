@@ -12,6 +12,25 @@
     "noAccount": "Chưa có tài khoản?",
     "signUpNow": "Đăng ký ngay"
   },
+  "register": {
+    "name": "Họ tên",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "register": "Đăng ký",
+    "namePlaceholder": "Nhập họ tên của bạn",
+    "emailPlaceholder": "Nhập email của bạn",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "confirmPasswordPlaceholder": "Nhập lại mật khẩu",
+    "registerButton": "Đăng ký ngay",
+    "orRegisterWith": "Hoặc đăng ký với",
+    "haveAccount": "Đã có tài khoản?",
+    "signInNow": "Đăng nhập ngay",
+    "agreeTerms": "Tôi đồng ý với",
+    "termsOfService": "Điều khoản dịch vụ",
+    "and": "và",
+    "privacyPolicy": "Chính sách bảo mật"
+  },
   "theme": {
     "light": "Sáng",
     "dark": "Tối",
@@ -21,5 +40,9 @@
     "google": "Google",
     "facebook": "Facebook",
     "github": "GitHub"
+  },
+  "language": {
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt"
   }
 }

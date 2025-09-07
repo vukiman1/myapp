@@ -12,6 +12,25 @@
     "noAccount": "Don't have an account?",
     "signUpNow": "Sign up now"
   },
+  "register": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "register": "Register",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordPlaceholder": "Enter your password again",
+    "registerButton": "Register now",
+    "orRegisterWith": "Or register with",
+    "haveAccount": "Already have an account?",
+    "signInNow": "Login now",
+    "agreeTerms": "I agree with",
+    "termsOfService": "Terms of service",
+    "and": "and",
+    "privacyPolicy": "Privacy policy"
+  },
   "theme": {
     "light": "Light",
     "dark": "Dark",
@@ -21,5 +40,9 @@
     "google": "Google",
     "facebook": "Facebook",
     "github": "GitHub"
+  },
+  "language": {
+    "en": "English",
+    "vi": "Vietnamese"
   }
 }
