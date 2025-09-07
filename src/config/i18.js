@@ -23,7 +23,7 @@ i18n
     resources,
     lng: "vi", // Default language
     fallbackLng: "en",
-    debug: process.env.NODE_ENV === "development",
+    debug: false,
 
     ns: ["translation", "common"],
     defaultNS: "translation",

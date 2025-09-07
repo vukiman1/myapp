@@ -1,7 +1,5 @@
 {
   "login": {
-    "welcome": "Welcome",
-    "welcome.text": "Please login to continue",
     "email": "Email",
     "password": "Password",
     "remember": "Remember me",
@@ -13,5 +11,15 @@
     "orLoginWith": "Or login with",
     "noAccount": "Don't have an account?",
     "signUpNow": "Sign up now"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "social": {
+    "google": "Google",
+    "facebook": "Facebook",
+    "github": "GitHub"
   }
 }

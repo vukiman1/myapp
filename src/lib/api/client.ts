@@ -9,7 +9,7 @@ export async function apiFetch<T>(
       "Content-Type": "application/json",
       ...(options.headers || {}),
     },
-    credentials: "include", // QUAN TRỌNG: gửi kèm cookies HttpOnly
+    credentials: "include",
   });
 
   if (!res.ok) {

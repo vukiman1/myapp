@@ -1,26 +1,171 @@
 @import "tailwindcss";
+@import "./style/theme.css";
 
+/* Light theme (default) */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --icon-color: #6b7280;
+  --link-color: #3b82f6;
+  --link-hover: #2563eb;
+  --divider-color: #e5e7eb;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --gradient-from: #1e3a8a;
+  --gradient-to: #312e81;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark theme */
+.dark {
+  --background: #111827;
+  --foreground: #f9fafb;
+  --card-bg: #1f2937;
+  --border-color: #374151;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --input-bg: #374151;
+  --input-border: #4b5563;
+  --icon-color: #9ca3af;
+  --link-color: #60a5fa;
+  --link-hover: #93c5fd;
+  --divider-color: #4b5563;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --gradient-from: #111827;
+  --gradient-to: #1f2937;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Custom styles for dark mode */
+.dark .bg-white {
+  background-color: var(--card-bg) !important;
+}
+
+.dark .text-gray-800 {
+  color: var(--foreground) !important;
+}
+
+.dark .text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+.dark .border-gray-300 {
+  border-color: var(--border-color) !important;
+}
+
+/* Custom theme-aware classes */
+.text-primary {
+  color: var(--foreground);
+  transition: color 0.2s ease;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+  transition: color 0.2s ease;
+}
+
+.bg-card {
+  background-color: var(--card-bg);
+  transition: background-color 0.2s ease;
+}
+
+.border-theme {
+  border-color: var(--border-color);
+  transition: border-color 0.2s ease;
+}
+
+.bg-input {
+  background-color: var(--input-bg);
+  transition: background-color 0.2s ease;
+}
+
+.border-input {
+  border-color: var(--input-border);
+  transition: border-color 0.2s ease;
+}
+
+.text-icon {
+  color: var(--icon-color);
+  transition: color 0.2s ease;
+}
+
+.text-link {
+  color: var(--link-color);
+  transition: color 0.2s ease;
+}
+
+.text-link:hover {
+  color: var(--link-hover);
+}
+
+.divider-theme {
+  border-color: var(--divider-color);
+  color: var(--text-secondary);
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.shadow-theme {
+  box-shadow: var(--shadow);
+}
+
+.bg-gradient-theme {
+  background: linear-gradient(
+    to right,
+    var(--gradient-from),
+    var(--gradient-to)
+  );
+  transition: background 0.2s ease;
+}
+
+/* Form specific classes */
+.form-input {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--foreground);
+  transition: all 0.2s ease;
+}
+
+.form-input:hover {
+  border-color: #60a5fa;
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+}
+
+/* Button variants */
+.btn-social {
+  border-color: var(--border-color);
+  color: var(--foreground);
+  transition: all 0.2s ease;
+}
+
+.btn-social:hover {
+  border-color: var(--link-color);
+  color: var(--link-color);
+}
+
+/* Page backgrounds */
+.page-bg {
+  background: var(--background);
+  transition: background-color 0.2s ease;
 }

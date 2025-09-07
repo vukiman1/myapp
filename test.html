@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Form</title>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
+    <script>
+      function enableSubmit() {
+        document.getElementById("submit-button").disabled = false;
+      }
+    </script>
+  </head>
+  <body>
+    <form id="contact-form" action="/submit" method="POST">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Message" required></textarea>
+
+      <!-- Turnstile widget -->
+      <div
+        class="cf-turnstile"
+        data-sitekey="0x4AAAAAAP2-CJWp8-J7hL2Q"
+        data-callback="enableSubmit"
+      ></div>
+
+      <button type="submit" id="submit-button">Submit</button>
+    </form>
+  </body>
+</html>

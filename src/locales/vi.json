@@ -1,7 +1,5 @@
 {
   "login": {
-    "welcome": "Chào mừng",
-    "welcome.text": "Vui lòng đăng nhập để tiếp tục",
     "email": "Email",
     "password": "Mật khẩu",
     "remember": "Ghi nhớ đăng nhập",
@@ -13,5 +11,15 @@
     "orLoginWith": "Hoặc đăng nhập với",
     "noAccount": "Chưa có tài khoản?",
     "signUpNow": "Đăng ký ngay"
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối",
+    "system": "Hệ thống"
+  },
+  "social": {
+    "google": "Google",
+    "facebook": "Facebook",
+    "github": "GitHub"
   }
 }
