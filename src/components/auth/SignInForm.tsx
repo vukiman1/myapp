@@ -14,7 +14,7 @@ import { SelectTheme } from "@/lib/selectTheme";
 import { deleteMany, getMany, setMany } from "@/helper/localstorage";
 import CloudflareTurnstile from "@/lib/cloudflare/cloudflare_turnstile";
 import { useState } from "react";
-import { AuthApi } from "@/lib/api/auth/auth";
+import { AuthApi } from "@/app/api/auth/auth";
 type FormValues = {
   email: string;
   password: string;
@@ -47,6 +47,7 @@ const SignInForm = () => {
 
   const onFinish = (values: FormValues) => {
     setLoading(true);
+    console.log("values", values);
     mutation.mutate({
       email: values.email,
       password: values.password,

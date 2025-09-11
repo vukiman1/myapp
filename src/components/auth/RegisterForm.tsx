@@ -14,7 +14,7 @@ import { useMutation } from "@tanstack/react-query";
 import { SelectTheme } from "@/lib/selectTheme";
 import CloudflareTurnstile from "@/lib/cloudflare/cloudflare_turnstile";
 import { useState } from "react";
-import { AuthApi } from "@/lib/api/auth/auth";
+import { AuthApi } from "@/app/api/auth/auth";
 
 type FormValues = {
   name: string;

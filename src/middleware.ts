@@ -13,7 +13,6 @@ export default function middleware(req: NextRequest) {
   if (isPublicRoute) {
     return NextResponse.next();
   }
-
   // For now, we'll check if user has a token in cookies
   // In a real app, you might want to verify the token validity
   const token = req.cookies.get("auth-token")?.value;

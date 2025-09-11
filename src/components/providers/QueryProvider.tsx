@@ -14,6 +14,10 @@ export default function QueryProvider({ children }: QueryProviderProps) {
         defaultOptions: {
           queries: {
             staleTime: 60 * 1000, // 1 minute
+            retry: false,
+            refetchOnWindowFocus: false,
+            // Disable queries during SSR by default
+            enabled: typeof window !== 'undefined',
           },
         },
       }),
