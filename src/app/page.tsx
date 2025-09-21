@@ -1,10 +1,10 @@
-// import Header from "@/components/base/header/header";
+import Header from "@/components/base/header/header";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="max-w-md w-full space-y-8 p-8">
           <div className="text-center">

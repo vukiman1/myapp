@@ -8,6 +8,7 @@ import QueryProvider from "@/components/providers/QueryProvider";
 import { ThemeProvider } from "next-themes";
 import AntdThemeProvider from "@/components/providers/AntdThemeProvider";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import Chat from "@/components/base/chat/chat";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
             </AntdRegistry>
           </AntdThemeProvider>
         </ThemeProvider>
+        <Chat />
       </body>
     </html>
   );
