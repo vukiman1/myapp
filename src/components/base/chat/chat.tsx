@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Chat() {
   return (
-    <div className="hidden lg:block fixed bottom-0 right-0 z-50">
+    <div className="hidden lg:block fixed bottom-0 right-0 z-50 cursor-pointer w-[400px]">
       <div className="flex items-center gap-2 bg-[#ef1b28] pt-1 pb-1 pl-2 pr-2 rounded-tl-lg">
         <div>
           <Image
@@ -14,7 +14,7 @@ export default function Chat() {
         </div>
         <div>
           <span className="text-white text-sm">
-            Chat tư vấn - Giải đáp mọi thắc mắc
+            <b>Chat tư vấn </b>- Giải đáp mọi thắc mắc
           </span>
         </div>
       </div>

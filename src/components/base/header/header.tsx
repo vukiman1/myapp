@@ -6,7 +6,7 @@ export default function Header() {
     <>
       <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[var(--color-primary)]">
         <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center gap-2 ">
+          <div className="flex items-center gap-2 justify-center">
             <div className="flex items-center gap-1 max-lg:flex-row-reverse">
               <Link href="/" className="m-2 ">
                 <picture>
@@ -37,7 +37,7 @@ export default function Header() {
                       className="max-lg:w-10 max-lg:h-8"
                     />
                   </span>
-                  <span className="hidden xl:flex text-[var(--text-primary)]">
+                  <span className="hidden xl:flex text-[var(--text-primary)] text-sm font-semibold">
                     Danh mục
                   </span>
                 </a>
@@ -69,7 +69,7 @@ export default function Header() {
                       height={20}
                     />
                   </span>
-                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm">
+                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm font-semibold">
                     <span>Hotline</span>
                     <span>1900.5301</span>
                   </span>
@@ -85,7 +85,7 @@ export default function Header() {
                       height={20}
                     />
                   </span>
-                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm">
+                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm font-semibold">
                     <span>Hệ thống</span>
                     <span>Showroom</span>
                   </span>
@@ -101,7 +101,7 @@ export default function Header() {
                       height={20}
                     />
                   </span>
-                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm">
+                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm font-semibold">
                     <span>Tra cứu</span>
                     <span>đơn hàng</span>
                   </span>
@@ -123,7 +123,7 @@ export default function Header() {
                       <span>1</span>
                     </span>
                   </span>
-                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm">
+                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm font-semibold">
                     <span>Giỏ</span>
                     <span>hàng</span>
                   </span>
@@ -142,7 +142,7 @@ export default function Header() {
                       height={14}
                     />
                   </span>
-                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm">
+                  <span className="hidden xl:flex flex-col text-[var(--text-primary)] leading-4 text-sm font-semibold">
                     <span>Đăng</span>
                     <span>nhập</span>
                   </span>
