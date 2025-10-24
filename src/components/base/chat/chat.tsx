@@ -6,7 +6,7 @@ export default function Chat() {
       <div className="flex items-center gap-2 bg-[#ef1b28] pt-1 pb-1 pl-2 pr-2 rounded-tl-lg">
         <div>
           <Image
-            src="/images/icons/web/chat.svg"
+            src="/images/icons/web/header/chat.svg"
             alt="chat"
             width={20}
             height={20}

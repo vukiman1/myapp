@@ -5,10 +5,10 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[var(--color-primary)]">
-        <div className="container mx-auto px-4 py-3">
+        <div className="container mx-auto py-3">
           <div className="flex items-center gap-2 justify-center">
             <div className="flex items-center gap-1 max-lg:flex-row-reverse">
-              <Link href="/" className="m-2 ">
+              <Link href="/" className="mr-2 ">
                 <picture>
                   <source
                     media="(max-width: 1023px)"
@@ -25,12 +25,12 @@ export default function Header() {
               </Link>
               <div>
                 <a
-                  className="flex items-center lg:gap-2 xl:bg-[#BE1529] p-2 rounded-sm"
+                  className="flex items-center lg:gap-2 xl:bg-[#BE1529] p-2 rounded-sm ml-1"
                   href="#"
                 >
                   <span>
                     <Image
-                      src="/images/icons/web/menu.svg"
+                      src="/images/icons/web/header/menu.svg"
                       alt="Menu"
                       width={18}
                       height={14}
@@ -52,7 +52,7 @@ export default function Header() {
                 />
                 <button className="absolute right-0 top-0 bottom-0 max-lg:w-10 w-10 cursor-pointer">
                   <Image
-                    src="/images/icons/web/search.svg"
+                    src="/images/icons/web/header/search.svg"
                     alt="Search"
                     width={20}
                     height={20}
@@ -63,7 +63,7 @@ export default function Header() {
                 <a className="flex items-center gap-2" href="#">
                   <span className="w-7 h-7  flex items-center justify-center">
                     <Image
-                      src="/images/icons/web/hotline.svg"
+                      src="/images/icons/web/header/hotline.svg"
                       alt="Hotline"
                       width={20}
                       height={20}
@@ -79,7 +79,7 @@ export default function Header() {
                 <a className="flex items-center gap-2" href="#">
                   <span className="w-7 h-7  flex items-center justify-center">
                     <Image
-                      src="/images/icons/web/location.svg"
+                      src="/images/icons/web/header/location.svg"
                       alt="Hotline"
                       width={20}
                       height={20}
@@ -95,7 +95,7 @@ export default function Header() {
                 <a className="flex items-center gap-2" href="#">
                   <span className="w-7 h-7  flex items-center justify-center">
                     <Image
-                      src="/images/icons/web/order.svg"
+                      src="/images/icons/web/header/order.svg"
                       alt="Hotline"
                       width={20}
                       height={20}
@@ -114,7 +114,7 @@ export default function Header() {
                 >
                   <span className="relative w-7 h-7 flex items-center justify-center">
                     <Image
-                      src="/images/icons/web/cart.svg"
+                      src="/images/icons/web/header/cart.svg"
                       alt="Hotline"
                       width={20}
                       height={20}
@@ -136,7 +136,7 @@ export default function Header() {
                 >
                   <span className="w-7 h-7 flex items-center justify-center">
                     <Image
-                      src="/images/icons/web/user.svg"
+                      src="/images/icons/web/header/user.svg"
                       alt="Menu"
                       width={18}
                       height={14}

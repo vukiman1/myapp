@@ -1,10 +1,18 @@
 import Header from "@/components/base/header/header";
+import SubHeader from "@/components/base/header/sub_header";
+import { Topheader } from "@/components/base/header/top_header";
+import { Sections } from "@/components/HomeSections/Sections";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
+      <Topheader />
       <Header />
+      <SubHeader />
+      <main className="bg-[var(--body-color-bg)]">
+        <Sections />
+      </main>
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="max-w-md w-full space-y-8 p-8">
           <div className="text-center">
