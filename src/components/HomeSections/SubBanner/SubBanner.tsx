@@ -25,16 +25,16 @@ export default function SubBanner() {
   ];
   return (
     <section>
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-2 mb-2">
         {subBannerList.map((item) => (
-          <div key={item.title}>
-            <a href={item.href}>
+          <div key={item.title} className="flex-1">
+            <a href={item.href} className="block">
               <Image
                 src={item.image}
                 alt={item.title}
-                width={1000}
-                height={1000}
-                className="rounded-md"
+                width={300}
+                height={100}
+                className="rounded-md w-full h-auto"
               />
             </a>
           </div>

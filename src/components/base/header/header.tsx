@@ -132,7 +132,7 @@ export default function Header() {
               <div className="hidden lg:block">
                 <a
                   className="flex items-center  xl:bg-[#BE1529] p-2 rounded-sm"
-                  href="#"
+                  href="/signin"
                 >
                   <span className="w-7 h-7 flex items-center justify-center">
                     <Image

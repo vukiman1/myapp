@@ -85,8 +85,8 @@ export default function HomeSectionSlider() {
   ];
 
   return (
-    <section className="flex gap-2 pt-4 h-full">
-      <div className="hidden xl:block w-56 bg-white flex-shrink-0 rounded-md h-full">
+    <section className="flex gap-2 pt-4">
+      <div className="hidden xl:block w-56 bg-white flex-shrink-0 rounded-md overflow-hidden">
         <nav>
           <ul>
             {navList.map((item, index) => (
@@ -123,73 +123,73 @@ export default function HomeSectionSlider() {
           </ul>
         </nav>
       </div>
-      <div className="flex-1 w-[1000px] h-full">
-        <div className="grid grid-cols-3 grid-rows-3 gap-2 h-full">
-          <div className="col-span-2 row-span-2 rounded-md ">
-            <a href="#" className="h-full">
+      <div className="flex-1">
+        <div className="grid grid-cols-3 grid-rows-3 gap-2">
+          <div className="col-span-2 row-span-2">
+            <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-back-to-school-25-slider.png"
-                className="rounded-lg"
+                className="rounded-lg w-full h-full object-cover"
                 alt="Banner"
-                width={1000}
-                height={700}
+                width={800}
+                height={525}
               />
             </a>
           </div>
 
-          <div className="col-start-3 row-start-1 ">
-            <a href="#">
+          <div className="col-start-3 row-start-1">
+            <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-ban-phim-slider-right-t8.png"
-                className="rounded-lg"
+                className="rounded-lg w-full h-full object-cover"
                 alt="Banner"
-                width={1000}
-                height={600}
+                width={400}
+                height={260}
               />
             </a>
           </div>
-          <div className="col-start-3 row-start-2 ">
-            <a href="#">
+          <div className="col-start-3 row-start-2">
+            <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-build-pc-slider-right-t8.png"
-                className="rounded-lg"
+                className="rounded-lg w-full h-full object-cover"
                 alt="Banner"
-                width={1000}
-                height={600}
+                width={400}
+                height={260}
               />
             </a>
           </div>
 
-          <div className="col-start-1 row-start-3 ">
-            <a href="#">
+          <div className="col-start-1 row-start-3">
+            <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-back-to-school-25-slider.png"
-                className="rounded-lg"
+                className="rounded-lg w-full h-full object-cover"
                 alt="Banner"
-                width={1000}
-                height={600}
+                width={400}
+                height={260}
               />
             </a>
           </div>
-          <div className="col-start-2 row-start-3 ">
-            <a href="#">
+          <div className="col-start-2 row-start-3">
+            <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-back-to-school-25-slider.png"
-                className="rounded-lg"
+                className="rounded-lg w-full h-full object-cover"
                 alt="Banner"
-                width={1000}
-                height={600}
+                width={400}
+                height={260}
               />
             </a>
           </div>
-          <div className="col-start-3 row-start-3 ">
-            <a href="#">
+          <div className="col-start-3 row-start-3">
+            <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-back-to-school-25-slider.png"
-                className="rounded-lg"
+                className="rounded-lg w-full h-full object-cover"
                 alt="Banner"
-                width={1000}
-                height={600}
+                width={400}
+                height={260}
               />
             </a>
           </div>

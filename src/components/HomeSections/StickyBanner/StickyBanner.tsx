@@ -39,7 +39,7 @@ export default function StickyBanner() {
       >
         {/* Banner cho màn hình 2xl trở lên - size 150x150 */}
         <div className="container mx-auto max-w-[1280px] relative hidden 2xl:block">
-          <div className="absolute left-[-140px] pointer-events-auto">
+          <div className="absolute left-[-160px] pointer-events-auto">
             <a href={StickyBannerList[0].href}>
               <Image
                 src={StickyBannerList[0].image}
@@ -50,7 +50,7 @@ export default function StickyBanner() {
               />
             </a>
           </div>
-          <div className="absolute right-[-140px] pointer-events-auto">
+          <div className="absolute right-[-160px] pointer-events-auto">
             <a href={StickyBannerList[1].href}>
               <Image
                 src={StickyBannerList[1].image}
@@ -65,7 +65,7 @@ export default function StickyBanner() {
 
         {/* Banner cho màn hình xl - size 100x100 */}
         <div className="container mx-auto max-w-[1280px] relative hidden xl:block 2xl:hidden">
-          <div className="absolute left-[-90px] pointer-events-auto">
+          <div className="absolute left-[-110px] pointer-events-auto">
             <a href={StickyBannerList[0].href}>
               <Image
                 src={StickyBannerList[0].image}
@@ -76,7 +76,7 @@ export default function StickyBanner() {
               />
             </a>
           </div>
-          <div className="absolute right-[-90px] pointer-events-auto">
+          <div className="absolute right-[-110px] pointer-events-auto">
             <a href={StickyBannerList[1].href}>
               <Image
                 src={StickyBannerList[1].image}

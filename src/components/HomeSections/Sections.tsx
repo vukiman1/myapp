@@ -1,5 +1,7 @@
 import Slider from "./Slider/Slider";
 import SubBanner from "./SubBanner/SubBanner";
+import SectionBanner from "./SectionBanner/SectionBanner";
+import SectionCollection from "./SectionCollection/SectionCollection";
 
 export function Sections() {
   return (
@@ -8,6 +10,8 @@ export function Sections() {
         <div className="max-w-[1280px]">
           <Slider />
           <SubBanner />
+          <SectionBanner />
+          <SectionCollection />
         </div>
       </div>
     </div>
