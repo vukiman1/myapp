@@ -1,6 +1,29 @@
+"use client";
+
 import Icon from "@ant-design/icons";
+import { useEffect, useState } from "react";
 
 export default function SubHeader() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Ẩn khi scroll xuống, hiện khi scroll lên
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
   const listItem = [
     {
       title: "Mua PC tặng màn 240Hz",
@@ -35,7 +58,12 @@ export default function SubHeader() {
   ];
 
   return (
-    <div className="border-b-1 border-b-[#E0E0E0]">
+    <div
+      className={`border-b-1 border-b-[#E0E0E0] transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+      data-subheader-visible={isVisible}
+    >
       <div className="container mx-auto">
         <div className="flex items-center justify-center">
           <ul className="flex justify-evenly">

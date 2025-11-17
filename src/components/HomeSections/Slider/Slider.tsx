@@ -85,7 +85,7 @@ export default function HomeSectionSlider() {
   ];
 
   return (
-    <div className="flex gap-4 pt-4 h-full">
+    <section className="flex gap-2 pt-4 h-full">
       <div className="hidden xl:block w-56 bg-white flex-shrink-0 rounded-md h-full">
         <nav>
           <ul>
@@ -124,7 +124,7 @@ export default function HomeSectionSlider() {
         </nav>
       </div>
       <div className="flex-1 w-[1000px] h-full">
-        <div className="grid grid-cols-3 grid-rows-3 gap-3 h-full">
+        <div className="grid grid-cols-3 grid-rows-3 gap-2 h-full">
           <div className="col-span-2 row-span-2 rounded-md ">
             <a href="#" className="h-full">
               <Image
@@ -195,6 +195,6 @@ export default function HomeSectionSlider() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
