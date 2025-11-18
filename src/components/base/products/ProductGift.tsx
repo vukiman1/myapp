@@ -27,7 +27,7 @@ export default function ProductGift({ item }: { item: ProductCardType }) {
     };
   }, [isGiftOpen]);
   return (
-    <div className="flex items-center justify-between mb-2 min-h-[28px]">
+    <>
       {item.gift.length > 0 && item.gift.find(({ isHot }) => isHot) && (
         <div className="flex items-center gap-1 bg-[var(--color-primary)] text-white rounded-2xl px-2">
           <Image
@@ -74,6 +74,6 @@ export default function ProductGift({ item }: { item: ProductCardType }) {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 }

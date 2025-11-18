@@ -12,7 +12,9 @@ export default function ProductCard({ item }: { item: ProductCardType }) {
       className="w-full xl:w-1/5 border border-gray-200 rounded-md"
     >
       <div className="p-2">
-        <ProductGift item={item} />
+        <div className="flex items-center justify-between mb-2 min-h-[28px]">
+          <ProductGift item={item} />
+        </div>
         <div className="p-2">
           <Image
             src={item.image}

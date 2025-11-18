@@ -6,7 +6,7 @@ export default function ColeectionSlider({ href }: { href: string }) {
       id: 1,
       title: "PC GVN Intel i5-12400F/VGA ARC B580",
       price: 100000,
-      tag: [1, 3, 5],
+      tag: [1, 5, 3],
       href: "/product-1",
       image: "/images/products/product-2.jpg",
       gift: [
@@ -46,7 +46,7 @@ export default function ColeectionSlider({ href }: { href: string }) {
       id: 2,
       title: "PC GVN Intel Ultra 5 225F/VGA ARC B580 (DDR5)",
       price: 200000,
-      tag: [2, 4, 6],
+      tag: [1, 5, 4, 6],
       href: "/product-1",
       image: "/images/products/product-2.jpg",
       gift: [],
@@ -116,7 +116,7 @@ export default function ColeectionSlider({ href }: { href: string }) {
       id: 4,
       title: "PC GVN Intel Core Ultra 7 265KF/ VGA RTX 5060",
       price: 400000,
-      tag: [4, 6, 8],
+      tag: [4, 6, 8, 5],
       href: "/product-1",
       image: "/images/products/product-2.jpg",
       gift: [
