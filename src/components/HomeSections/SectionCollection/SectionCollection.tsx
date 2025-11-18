@@ -53,7 +53,7 @@ export default function SectionCollection() {
         {collectionList.map((item) => (
           <div
             key={item.title}
-            className="bg-white border-b border-gray-200 px-6 py-3 rounded-md"
+            className="bg-white border-b border-gray-200 rounded-md"
           >
             <SectionCollectionHeader
               title={item.title}

@@ -1,15 +1,20 @@
-import { ProductTag } from "@/config/enum/enum";
-import Image from "next/image";
+import ProductCard from "@/components/base/products/ProductCard";
 
 export default function ColeectionSlider({ href }: { href: string }) {
   const productList = [
     {
       id: 1,
-      title: "Product 1",
+      title: "PC GVN Intel i5-12400F/VGA ARC B580",
       price: 100000,
       tag: [1, 3, 5],
       href: "/product-1",
-      image: "/images/products/product-1.png",
+      image: "/images/products/product-2.jpg",
+      gift: [
+        {
+          title: "Quà tặng HOT",
+          isHot: true,
+        },
+      ],
       rating: {
         total: 100,
         average: 4.5,
@@ -39,11 +44,12 @@ export default function ColeectionSlider({ href }: { href: string }) {
     },
     {
       id: 2,
-      title: "Product 2",
+      title: "PC GVN Intel Ultra 5 225F/VGA ARC B580 (DDR5)",
       price: 200000,
       tag: [2, 4, 6],
-      href: "/product-2",
-      image: "/images/products/product-2.png",
+      href: "/product-1",
+      image: "/images/products/product-2.jpg",
+      gift: [],
       rating: {
         total: 100,
         average: 4.5,
@@ -73,11 +79,12 @@ export default function ColeectionSlider({ href }: { href: string }) {
     },
     {
       id: 3,
-      title: "Product 3",
+      title: "PC GVN Intel Ultra 5 225F/VGA RTX 5060 (DDR5)",
       price: 300000,
       tag: [3, 5, 7],
-      href: "/product-3",
-      image: "/images/products/product-3.png",
+      href: "/product-1",
+      image: "/images/products/product-2.jpg",
+      gift: [],
       rating: {
         total: 100,
         average: 4.5,
@@ -107,11 +114,17 @@ export default function ColeectionSlider({ href }: { href: string }) {
     },
     {
       id: 4,
-      title: "Product 4",
+      title: "PC GVN Intel Core Ultra 7 265KF/ VGA RTX 5060",
       price: 400000,
       tag: [4, 6, 8],
-      href: "/product-4",
-      image: "/images/products/product-4.png",
+      href: "/product-1",
+      image: "/images/products/product-2.jpg",
+      gift: [
+        {
+          title: "Quà tặng HOT",
+          isHot: true,
+        },
+      ],
       rating: {
         total: 100,
         average: 4.5,
@@ -141,11 +154,17 @@ export default function ColeectionSlider({ href }: { href: string }) {
     },
     {
       id: 5,
-      title: "Product 5",
+      title: "Laptop gaming Acer Nitro V 15 ANV15 41 R2UP",
       price: 500000,
       tag: [5, 7, 9],
-      href: "/product-5",
-      image: "/images/products/product-5.png",
+      href: "/product-1",
+      image: "/images/products/product-2.jpg",
+      gift: [
+        {
+          title: "Quà tặng HOT",
+          isHot: true,
+        },
+      ],
       rating: {
         total: 100,
         average: 4.5,
@@ -175,32 +194,9 @@ export default function ColeectionSlider({ href }: { href: string }) {
     },
   ];
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 p-4">
       {productList.map((item) => (
-        <div key={item.title}>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-2">
-              {item.rating.stars.map((star) => (
-                <span key={star.value} className="text-sm text-gray-500">
-                  {star.value}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-gray-500">{item.title}</span>
-          </div>
-          <a href={item.href}>
-            <div className="flex items-center gap-2">
-              {item.tag.map((tag) => (
-                <span key={tag} className="text-sm text-gray-500">
-                  {ProductTag[tag as unknown as keyof typeof ProductTag]}
-                </span>
-              ))}
-            </div>
-            <Image src={item.image} alt={item.title} width={100} height={100} />
-          </a>
-        </div>
+        <ProductCard key={item.id} item={item} />
       ))}
     </div>
   );

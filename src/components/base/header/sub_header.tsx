@@ -1,6 +1,5 @@
 "use client";
 
-import Icon from "@ant-design/icons";
 import { useEffect, useState } from "react";
 
 export default function SubHeader() {

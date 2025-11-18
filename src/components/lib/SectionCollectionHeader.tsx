@@ -16,13 +16,17 @@ export default function SectionCollectionHeader({
   tag,
 }: SectionCollectionHeaderProps) {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex xl:items-center justify-between  flex-col xl:flex-row py-3 px-7">
       <div className="flex items-center gap-4">
-        <h2 className="text-2xl font-semibold">{title}</h2>
+        <h2 className="text-xl xl:text-2xl font-semibold text-[var(--title-color)] ">
+          {title}
+        </h2>
         <div className="text-gray-500">|</div>
         <div className="flex items-center gap-2">
           {subTitleIcon}
-          <h3 className="font-semibold">{subTitle}</h3>
+          <h3 className="text-sm lg:text-base font-semibold text-[var(--title-color)]">
+            {subTitle}
+          </h3>
         </div>
       </div>
       <div>
