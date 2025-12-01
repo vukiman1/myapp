@@ -58,7 +58,7 @@ export default function SubHeader() {
 
   return (
     <div
-      className={`border-b-1 border-b-[#E0E0E0] transition-transform duration-300 ${
+      className={`hidden lg:block border-b-1 border-b-[#E0E0E0] transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
       data-subheader-visible={isVisible}

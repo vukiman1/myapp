@@ -124,7 +124,7 @@ export default function HomeSectionSlider() {
         </nav>
       </div>
       <div className="flex-1">
-        <div className="grid grid-cols-3 grid-rows-3 gap-2">
+        <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-2 lg:grid-rows-3 gap-2">
           <div className="col-span-2 row-span-2">
             <a href="#" className="block">
               <Image
@@ -137,7 +137,7 @@ export default function HomeSectionSlider() {
             </a>
           </div>
 
-          <div className="col-start-3 row-start-1">
+          <div className="col-start-3 hidden lg:block row-start-1">
             <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-ban-phim-slider-right-t8.png"
@@ -148,7 +148,7 @@ export default function HomeSectionSlider() {
               />
             </a>
           </div>
-          <div className="col-start-3 row-start-2">
+          <div className="col-start-3 hidden lg:block row-start-2">
             <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-build-pc-slider-right-t8.png"
@@ -160,7 +160,7 @@ export default function HomeSectionSlider() {
             </a>
           </div>
 
-          <div className="col-start-1 row-start-3">
+          <div className="col-start-1 hidden lg:block row-start-3">
             <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-back-to-school-25-slider.png"
@@ -171,7 +171,7 @@ export default function HomeSectionSlider() {
               />
             </a>
           </div>
-          <div className="col-start-2 row-start-3">
+          <div className="col-start-2 hidden lg:block row-start-3">
             <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-back-to-school-25-slider.png"
@@ -182,7 +182,7 @@ export default function HomeSectionSlider() {
               />
             </a>
           </div>
-          <div className="col-start-3 row-start-3">
+          <div className="col-start-3 hidden lg:block row-start-3">
             <a href="#" className="block">
               <Image
                 src="/images/banner/sections/slider/gearvn-back-to-school-25-slider.png"

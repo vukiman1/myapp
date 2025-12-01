@@ -28,7 +28,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ title, links }) => {
         >
           <h4 className="text-sm lg:text-base font-semibold">{title}</h4>
           <DownOutlined
-            className={`lg:hidden text-xs transition-transform ${isOpen ? "rotate-180" : ""}`}
+            className={`max-lg:inline-block lg:!hidden text-xs transition-transform ${isOpen ? "rotate-180" : ""}`}
           />
         </button>
         <div
@@ -67,7 +67,7 @@ const ContactSection: React.FC = () => {
             <span className="text-xs font-normal">{CONTACT_INFO.subtitle}</span>
           </h4>
           <DownOutlined
-            className={`lg:hidden text-xs transition-transform ${isOpen ? "rotate-180" : ""}`}
+            className={`max-lg:inline-block lg:!hidden text-xs transition-transform ${isOpen ? "rotate-180" : ""}`}
           />
         </button>
         <div
@@ -126,7 +126,7 @@ const ShippingPaymentSection: React.FC = () => {
             Đơn vị vận chuyển
           </h4>
           <DownOutlined
-            className={`lg:hidden text-xs transition-transform ${isShippingOpen ? "rotate-180" : ""}`}
+            className={`max-lg:inline-block lg:!hidden text-xs transition-transform ${isShippingOpen ? "rotate-180" : ""}`}
           />
         </button>
         <div
@@ -145,7 +145,7 @@ const ShippingPaymentSection: React.FC = () => {
             Cách thức thanh toán
           </h4>
           <DownOutlined
-            className={`lg:hidden text-xs transition-transform ${isPaymentOpen ? "rotate-180" : ""}`}
+            className={`max-lg:inline-block lg:!hidden text-xs transition-transform ${isPaymentOpen ? "rotate-180" : ""}`}
           />
         </button>
         <div
@@ -160,7 +160,7 @@ const ShippingPaymentSection: React.FC = () => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="main-footer bg-gray-100 text-gray-800 text-sm">
+    <footer className="main-footer bg-white text-gray-800 text-sm">
       <div className="main-footer--top py-6 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8">
@@ -177,11 +177,11 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="main-footer--copyright bg-gray-200 py-4 lg:py-6">
+      <div className="main-footer--copyright bg-white py-4 lg:py-6 border-t-2 border-gray-100">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-            <div className="w-full lg:flex-1">
-              <h4 className="text-xs lg:text-sm font-semibold mb-2 lg:mb-3">
+            <div className="w-full flex items-center gap-3">
+              <h4 className="text-xs lg:text-sm font-semibold mb-2 lg:mb-3 uppercase">
                 Kết nối với chúng tôi
               </h4>
               <div className="flex items-center justify-between lg:justify-start gap-4 lg:gap-6">

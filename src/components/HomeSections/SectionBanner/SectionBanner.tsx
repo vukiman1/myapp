@@ -15,7 +15,7 @@ export default function SectionBanner() {
   ];
   return (
     <section>
-      <div className="flex gap-2">
+      <div className="flex gap-2 flex-col lg:flex-row">
         {sectionBannerList.map((item) => (
           <div key={item.title} className="flex-1">
             <a href={item.href} className="block">
